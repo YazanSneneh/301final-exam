@@ -13,8 +13,8 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 const PORT = process.env.PORT;
-const client = new pg.Client(process.env.DATABASE_URL);   // on your machine
-// const client = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } }); // for heroku
+// const client = new pg.Client(process.env.DATABASE_URL);   // on your machine
+const client = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } }); // for heroku
 
 app.get('/', (req, res) => {
     const url = 'https://api.covid19api.com/world/total';
