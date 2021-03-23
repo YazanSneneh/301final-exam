@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<%- include('layout/head') %>
 
+    <body>
+        <%- include('layout/header') %>
+            <%- include('layout/navbar') %>
+                <main>
+                    <article>
+                        <h3>Country : <%= country.country %>
+                        </h3>
+                        <h5> Total Confirmed Cases : <%= country.totalconfirmed %>
+                        </h5>
+                        <h5>Total Deaths Cases :<%= country.totaldeaths %>
+                        </h5>
+                        <h5>Total Recovered Cases :<%= country.totalrecovered %>
+                        </h5>
+                        <h5> Date : <%= country.date %>
+                        </h5>
 
-<body>
-    <main>
-        <article>
-            <h3>Country : <%=country.country %>
-            </h3>
-            <h5> Total Confirmed Cases : <%=country.totalConfirmed %>
-            </h5>
-            <h5>Total Deaths Cases :<%=country.totalDeaths %>
-            </h5>
-            <h5>Total Recovered Cases :<%=country.totalRecovered %>
-            </h5>
-            <h5> Date : <%=country.date %>
-            </h5>
-
-            <form action="" method="POST">
-                <button type="submit"> Delete button</button>
-            </form>
-        </article>
-    </main>
-</body>
+                        <form action="/recordDetails/<%= country.id %>?_method=DELETE" method="POST">
+                            <button type="submit"> Delete button</button>
+                        </form>
+                    </article>
+                </main>
+                <%- include('layout/footer') %>
+    </body>
 
 </html>

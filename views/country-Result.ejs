@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<%- include('layout/head') %>
 
-<body>
-    <main>
-        <% cards.forEach(card=>{ %>
-            <article>
-                <h3>Date : <%= card.Date %>
-                </h3>
-                <h3>cases : <%= card.cases || 'no cases' %>
-                </h3>
-            </article>
-            <% }) %>
-    </main>
-</body>
+    <body>
+        <%- include('layout/header') %>
+            <%- include('layout/navbar') %>
+                <main>
+                    <% cards.forEach(card=>{ %>
+                        <article>
+                            <h3>Date : <%= card.Date %>
+                            </h3>
+                            <h3>cases : <%= card.Cases || 'No Cases' %>
+                            </h3>
+                        </article>
+                        <% }) %>
+                </main>
+                <%- include('layout/footer') %>
+    </body>
 
 </html>

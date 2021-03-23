@@ -1,0 +1,29 @@
+ /* ##################################### SECTION COLORS ################################# */
+ header{
+    background-color: #4a47a3;
+}
+/* ################################### BACKGROUND COLORS ################################ */
+.dark{
+    background-color: #333333;
+}
+.white{
+    background-color: #f9f6f7;
+}
+.pink{
+    background-color: #ff4646;
+}
+.blue{
+     background-color: #28527a;
+}
+
+/* ####################################### FONT COLORS ################################### */
+.white-font{
+    color: #ffffff;
+}
+.black-font{
+    color:#151515;
+}
+.pink-font{
+    color: #ff4646;
+}
+

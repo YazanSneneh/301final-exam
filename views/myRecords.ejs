@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<%- include('layout/head') %>
 
-<body>
-    <main>
+    <body>
+        <%- include('layout/header') %>
+            <%- include('layout/navbar') %>
+                <main>
+                    <% if(records.length> 0){%>
+                        <% records.forEach( record=>{ %>
+                            <article>
+                                <h3>Country : <%=record.country %>
+                                </h3>
 
-        <% if(records.length> 0){%>
-            <% records.forEach( record=>{ %>
-                <article>
-                    <h3>Country : <%=record.country %>
-                    </h3>
+                                <h5> Date : <%=record.date %>
+                                </h5>
 
-                    <h5> Date : <%=record.date %>
-                    </h5>
+                                <a href="/recordDetails/<%=record.id %>" +record.id>
+                                    <button> view details</button>
+                                </a>
+                                <% })%>
 
-                    <a href="/recordDetails/<%=record.id %>" +record.id>
-                        <button> view details</button>
-                    </a>
-                    <% })%>
+                                    <%} else {%>
+                                        <h1>NO AVAILABLE RECORDS </h1>
+                                        <%}%>
 
-                        <%} else {%>
-                            <h1>NO AVAILABLE RECORDS </h1>
-                            <%}%>
-
-    </main>
-</body>
+                </main>
+                <%- include('layout/footer') %>
+    </body>
 
 </html>

@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<%- include('layout/head') %>
 
-<body>
+    <body>
+        <%- include('layout/header') %>
+            <%- include('layout/navbar') %>
+                <main class="white">
+                    <section id="total-stats" class=" center">
+                        <h2 class="heading-two">World Total Statistics</h2>
+                        <div class="container flex-container">
+                            <article class="pink container white-font">
+                                <p>Total Confirmed :
+                                    <%= stats.TotalConfirmed %>
+                                </p>
+                            </article>
+                            <article class="pink container white-font">
+                                <p>Total Deaths : <%= stats.TotalDeaths %>
+                                </p>
+                            </article>
+                            <article class="pink container white-font">
+                                <p>Total Recovered <%= stats.TotalRecovered %>
+                                </p>
+                            </article>
+                        </div>
+                    </section>
+                    <section id='country-stats-form' class="center">
+                        <h2 class="heading-two">Get Statistics for Specific Country</h2>
+                        <div class="container">
+                            <form action="/countryResult" method="GET">
+                                <input type="text" name="country" placeholder="country name">
+                                <input type="date" name='dateFrom'>
+                                <input type="date" name='dateTo'>
 
-    <main>
-        <article> total confirmed :
-            <%= viewData.TotalConfirmed %>
-        </article>
-        <article>
-            total deaths : <%= viewData.TotalDeaths %>
-        </article>
-        <article>
-            total recovered <%= viewData.TotalRecovered %>
-        </article>
-
-        <section>
-            <form action="/getCountryResult" method="GET">
-                <input type="text" name="country" placeholder="country name">
-                <input type="date" name='dateFrom'>
-                <input type="date" name='dateTo'>
-
-                <button type="submit"> Search</button>
-            </form>
-        </section>
-    </main>
-</body>
+                                <button class="blue white-font" type="submit"> Search</button>
+                            </form>
+                        </div>
+                    </section>
+                </main>
+                <%- include('layout/footer') %>
+    </body>
 
 </html>
