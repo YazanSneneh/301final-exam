@@ -13,10 +13,19 @@
 body{
     font-family: 'Open Sans', sans-serif;
 }
-
+/* headers styles */
 h1, h2, h3, h4,h5,h6{
     font-family: 'Roboto', sans-serif;
     font-family: 400;
+}
+
+.big-heading {
+    font-size: 3.5em;
+    font-weight: bolder;
+}
+.heading-two{
+   font-size: 1.5em;
+   font-weight: 700;
 }
 
 p{
@@ -33,5 +42,8 @@ a:hover {
 }
 
 button{
+    border: none;
+    padding: 4%;
+    font-size: 1.2em;
     cursor: pointer;
 }

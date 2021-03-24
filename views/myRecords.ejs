@@ -6,25 +6,31 @@
     <body>
         <%- include('layout/header') %>
             <%- include('layout/navbar') %>
-                <main>
-                    <% if(records.length> 0){%>
-                        <% records.forEach( record=>{ %>
-                            <article>
-                                <h3>Country : <%=record.country %>
-                                </h3>
+                <main class="white center">
+                    <div class="container flex-container">
+                        <% if(records.length> 0){%>
+                            <% records.forEach( record=>{ %>
+                                <article class="country-card">
+                                    <figcaption>
+                                        <h2 class="pink-font">Country : <%=record.country %>
+                                        </h2>
 
-                                <h5> Date : <%=record.date %>
-                                </h5>
+                                        <h3> Date : <%=record.date %>
+                                        </h3>
+                                    </figcaption>
+                                    <div class="card-button-container">
+                                        <a href="/recordDetails/<%=record.id %>" +record.id>
+                                            <button class="blue white-font"> view details</button>
+                                        </a>
+                                    </div>
 
-                                <a href="/recordDetails/<%=record.id %>" +record.id>
-                                    <button> view details</button>
-                                </a>
+                                </article>
                                 <% })%>
 
                                     <%} else {%>
-                                        <h1>NO AVAILABLE RECORDS </h1>
+                                        <h1 class="pink-font big-heading">NO AVAILABLE RECORDS </h1>
                                         <%}%>
-
+                    </div>
                 </main>
                 <%- include('layout/footer') %>
     </body>

@@ -6,15 +6,19 @@
     <body>
         <%- include('layout/header') %>
             <%- include('layout/navbar') %>
-                <main>
-                    <% cards.forEach(card=>{ %>
-                        <article>
-                            <h3>Date : <%= card.Date %>
-                            </h3>
-                            <h3>cases : <%= card.Cases || 'No Cases' %>
-                            </h3>
-                        </article>
-                        <% }) %>
+                <main class="center">
+                    <div class="container flex-container">
+                        <% cards.forEach(card=>{ %>
+                            <article class="country-card">
+                                <figcaption>
+                                    <h2 class=" pink-font">Date : <%= card.Date %>
+                                    </h2>
+                                    <h3>Cases : <%= card.Cases || 'No Cases' %>
+                                    </h3>
+                                </figcaption>
+                            </article>
+                            <% }) %>
+                    </div>
                 </main>
                 <%- include('layout/footer') %>
     </body>

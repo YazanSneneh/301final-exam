@@ -6,32 +6,38 @@
     <body>
         <%- include('layout/header') %>
             <%- include('layout/navbar') %>
-                <main>
-                    <% countries.forEach( country=>{ %>
-                        <article>
-                            <h3>Country : <%=country.country %>
-                            </h3>
-                            <h5> Total Confirmed Cases : <%=country.totalConfirmed %>
-                            </h5>
-                            <h5>Total Deaths Cases :<%=country.totalDeaths %>
-                            </h5>
-                            <h5>Total Recovered Cases :<%=country.totalRecovered %>
-                            </h5>
-                            <h5> Date : <%=country.date %>
-                            </h5>
+                <main class="center">
+                    <div class="container flex-container">
+                        <% countries.forEach( country=>{ %>
+                            <article class="country-card">
+                                <figcaption>
+                                    <h2 class="heading-two pink-font">Country : <%=country.country %>
+                                    </h2>
+                                    <h3> Total Confirmed Cases : <%=country.totalConfirmed %>
+                                    </h3>
+                                    <h3>Total Deaths Cases :<%=country.totalDeaths %>
+                                    </h3>
+                                    <h3>Total Recovered Cases :<%=country.totalRecovered %>
+                                    </h3>
+                                    <h3> Date : <%=country.date %>
+                                    </h3>
+                                </figcaption>
 
-                            <form action="/myRecords" method="POST">
-                                <input type="text" name="country" value="<%=country.country %>" hidden>
-                                <input type="text" name="confirmed" value="<%=country.totalConfirmed %>" hidden>
-                                <input type="text" name="deaths" value="<%=country.totalDeaths %>" hidden>
-                                <input type="text" name="recover" value="<%=country.totalRecovered %>" hidden>
-                                <input type="text" name="date" value="<%=country.date %>" hidden>
+                                <div class="form-container card-button-container">
+                                    <form action="/myRecords" method="POST">
+                                        <input type="text" name="country" value="<%=country.country %>" hidden>
+                                        <input type="text" name="confirmed" value="<%=country.totalConfirmed %>" hidden>
+                                        <input type="text" name="deaths" value="<%=country.totalDeaths %>" hidden>
+                                        <input type="text" name="recover" value="<%=country.totalRecovered %>" hidden>
+                                        <input type="text" name="date" value="<%=country.date %>" hidden>
 
-                                <button type="submit">add to my records</button>
-                            </form>
-                        </article>
+                                        <button class="button white-font blue" type="submit">add to my records</button>
+                                    </form>
+                                </div>
+                            </article>
 
-                        <% }) %>
+                            <% }) %>
+                    </div>
                 </main>
                 <%- include('layout/footer') %>
     </body>

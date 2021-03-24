@@ -1,31 +1,57 @@
+/* ################################ GENERAL STYLES ################################### */
 header h1,h2,p{
     margin: 3% 0;
 }
 
-.big-heading {
-    font-size: 3.5em;
-    font-weight: bolder;
-}
-.heading-two{
-   font-size: 1.5em;
-   font-weight: 700;
-}
-
-/* ################################## home page ###################################### */
 main h2{
     margin:0;
     padding: 5%;
 }
+
+footer p {
+    margin:0;
+}
+
+#body-404{
+    background-image: url('https://media.wired.com/photos/5e5ebdd9bd2cfe00085b5621/master/w_2560%2Cc_limit/Science_vaccine_118385790.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 20% 0;
+}
+/* ################################## HOME PAGE ###################################### */
+
 #total-stats article{
    font-weight: 600;
 }
-
-#country-stats-form form input, button{
-    padding: 1% 2%;
+#country-stats-form input, button{
+    padding: 1%;
 }
-#country-stats-form form input:focus{
+#country-stats-form input:focus{
     background-color: #caf7e3;
 }
-footer p {
-    margin:0;
+
+.home-page-button{
+   padding: 1%;
+}
+
+/* ################################## COUNTRY CARD ###################################### */
+.country-card{
+    margin:1%;
+    padding: 1% 0.5%;
+    border: 1px solid #eee;
+    border-left: 10px solid #ff4646;
+    max-width: fit-content;
+}
+.country-card figcaption{
+    border-bottom: 1px dotted #ff4646;
+}
+.country-card h2{
+    padding: 0;
+    margin: 1% 0 10% 0;
+}
+.country-card h3{
+    margin: 7% 0;
+}
+.card-button-container{
+  padding:7% 0 0 0;
 }

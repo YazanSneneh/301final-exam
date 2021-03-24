@@ -15,8 +15,8 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 const PORT = process.env.PORT;
-const client = new pg.Client(process.env.DATABASE_URL);
-// const client = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+// const client = new pg.Client(process.env.DATABASE_URL);
+const client = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 
 // .............................................................................. Routes
 app.get('/', handleHomePage);
@@ -125,11 +125,10 @@ function Country(country, TotalConfirmed, TotalDeaths, TotalRecovered, Date) {
     this.totalDeaths = TotalDeaths;
     this.totalRecovered = TotalRecovered;
     this.date = Date || 'default date';
-
 }
 
 function handle404(req, res) {
-    app.render('doesNotExist');
+    res.render('doesNotExist');
 }
 
 client.connect().then(() => {

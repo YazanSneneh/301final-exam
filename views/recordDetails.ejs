@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('layout/head') %>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= country.country %>
+    </title>
+    <link rel="stylesheet" href="/css/base.css" />
+</head>
 
-    <body>
-        <%- include('layout/header') %>
-            <%- include('layout/navbar') %>
-                <main>
-                    <article>
-                        <h3>Country : <%= country.country %>
-                        </h3>
-                        <h5> Total Confirmed Cases : <%= country.totalconfirmed %>
-                        </h5>
-                        <h5>Total Deaths Cases :<%= country.totaldeaths %>
-                        </h5>
-                        <h5>Total Recovered Cases :<%= country.totalrecovered %>
-                        </h5>
-                        <h5> Date : <%= country.date %>
-                        </h5>
+<body>
+    <%- include('layout/header') %>
+        <%- include('layout/navbar') %>
+            <main class="center">
+                <div class="container flex-container">
+                    <article class="country-card">
+                        <figcaption>
+                            <h2 class="heading-two pink-font">Country : <%= country.country %>
+                            </h2>
+                            <h3> Total Confirmed Cases : <%= country.totalconfirmed %>
+                            </h3>
+                            <h3>Total Deaths Cases :<%= country.totaldeaths %>
+                            </h3>
+                            <h3>Total Recovered Cases :<%= country.totalrecovered %>
+                            </h3>
+                            <h3> Date : <%= country.date %>
+                            </h3>
+                        </figcaption>
 
-                        <form action="/recordDetails/<%= country.id %>?_method=DELETE" method="POST">
-                            <button type="submit"> Delete button</button>
+                        <form class="card-button-container" action="/recordDetails/<%= country.id %>?_method=DELETE"
+                            method="POST">
+                            <button class="delete white-font" type="submit"> DELETE</button>
                         </form>
                     </article>
-                </main>
-                <%- include('layout/footer') %>
-    </body>
+                </div>
+            </main>
+            <%- include('layout/footer') %>
+</body>
 
 </html>
